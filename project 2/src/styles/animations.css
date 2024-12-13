@@ -1,0 +1,55 @@
+@keyframes quantum-particle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes quantum-wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 5px var(--color-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-glow);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--color-glow);
+  }
+}
+
+.quantum-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  animation: quantum-particle 3s infinite;
+}
+
+.quantum-wave {
+  animation: quantum-wave 4s ease-in-out infinite;
+}
+
+.glow-effect {
+  animation: glow-pulse 2s infinite;
+}

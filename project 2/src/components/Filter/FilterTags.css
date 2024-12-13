@@ -1,0 +1,32 @@
+.filter-tags {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  cursor: none;
+  transition: all var(--transition-speed);
+  font-size: 0.9rem;
+}
+
+.filter-tag[data-active="true"] {
+  background: var(--color-filter-button);
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+.filter-tag:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.filter-tag:active {
+  transform: translateY(0);
+}

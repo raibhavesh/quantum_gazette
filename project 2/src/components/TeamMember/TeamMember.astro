@@ -1,0 +1,39 @@
+---
+import './TeamMember.css';
+
+interface Props {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  socialLinks?: {
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+  };
+}
+
+const { name, role, bio, image, socialLinks } = Astro.props;
+---
+
+<div class="team-member">
+  <img src={image} alt={name} class="team-member-image" />
+  <div class="team-member-content">
+    <h3 class="team-member-name">{name}</h3>
+    <p class="team-member-role">{role}</p>
+    <p class="team-member-bio">{bio}</p>
+    {socialLinks && (
+      <div class="team-member-social">
+        {socialLinks.twitter && (
+          <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+        )}
+        {socialLinks.linkedin && (
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        )}
+        {socialLinks.github && (
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        )}
+      </div>
+    )}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+import './Navigation.css';
+
+const links = [
+  { href: '/', text: 'Home' },
+  { href: '/articles', text: 'Articles' },
+  { href: '/about', text: 'About' }
+];
+---
+
+<nav class="nav">
+  {links.map(link => (
+    <a href={link.href} class="nav-link">{link.text}</a>
+  ))}
+</nav>
