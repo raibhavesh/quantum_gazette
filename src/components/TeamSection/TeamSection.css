@@ -1,0 +1,22 @@
+.team-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.team-section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.team-section-description {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+}
+
+.team-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}

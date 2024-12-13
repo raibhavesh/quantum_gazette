@@ -1,0 +1,8 @@
+.main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+  width: 100%;
+  flex: 1 0 auto;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}

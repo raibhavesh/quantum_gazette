@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+import './index.css';
+
+const latestArticles = await getCollection('articles')
+  .then(articles => 
+    articles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 3)
+  );
+---
+
+<Layout title="Home">
+  <section class="hero">
+    <h1>Welcome to The Quantum Gazette</h1>
+    <p>Your premier source for cutting-edge scientific news and discoveries</p>
+  </section>
+
+  <section class="latest-articles">
+    <h2>Latest Articles</h2>
+    <div class="articles-grid">
+      {latestArticles.map(article => (
+        <ArticleCard article={article} />
+      ))}
+    </div>
+    <div class="view-all">
+      <a href="/articles" class="button">View All Articles</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TeamSection from "../../components/TeamSection/TeamSection.astro";
+import TeamMember from "../../components/TeamMember/TeamMember.astro";
+import "./about.css";
+
+const editors = [
+  {
+    name: "Shashanka Shekhar Sharma",
+    role: "Vice President and Editor",
+    bio: "A passionate individual navigating the intersection of words, data, and code.",
+    image: "/shashanka1.jpg",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/shashanka-shekhar-sharma/",
+    },
+  },
+  {
+    name: "Ritisha Katiyar",
+    role: "Lead (Quantum Core) and Editor",
+    bio: "Engineering Quantum Solutions, Redefining Computational Boundariesunraveling the mysteries of qubit dynamics.",
+    image: "/ritisha.jpg",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/ritisha-katiyar-501064291/ ",
+    },
+  },
+];
+
+const developers = [
+  {
+    name: "Shashanka Shekhar Sharma",
+    role: "Vice President and Web developer",
+    bio: "A passionate individual navigating the intersection of words, data, and code.",
+    image: "/shashanka1.jpg",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/shashanka-shekhar-sharma/",
+      github: "https://github.com/ShashankaShekharSharma",
+    },
+  },
+  {
+    name: "Hrishikesh Sarma",
+    role: "Web developer",
+    bio: "Fullstack developer specializing in front-end development across various frameworks.",
+    image: "/Hrishi.jpg",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/hrishikesh-sarma-043915283/",
+      github: "https://github.com/hrishi-sarma",
+    },
+  },
+];
+---
+
+<Layout title="About Us">
+  <div class="about-container">
+    <section class="about-intro">
+      <h1>About The Quantum Gazette</h1>
+      <p>
+        The Quantum Gazette is your premier destination for cutting-edge
+        scientific news and discoveries. Our team of expert editors and
+        developers work together to bring you accurate, engaging, and accessible
+        content from the frontiers of quantum science and technology.
+      </p>
+    </section>
+
+    <TeamSection
+      title="Our Editorial Team"
+      description="Meet our distinguished editors who ensure the highest quality of scientific journalism."
+    >
+      {editors.map((editor) => <TeamMember {...editor} />)}
+    </TeamSection>
+
+    <TeamSection
+      title="Our Development Team"
+      description="Meet the talented developers who make our digital platform possible."
+    >
+      {developers.map((developer) => <TeamMember {...developer} />)}
+    </TeamSection>
+  </div>
+</Layout>

@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import './ArticleCard.css';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+---
+
+<article class="article-card">
+  {article.data.image && (
+    <img src={article.data.image} alt="" class="article-image" />
+  )}
+  <div class="article-content">
+    <h3 class="article-title">
+      <a href={`/articles/${article.slug}`}>{article.data.title}</a>
+    </h3>
+    <p class="article-description">{article.data.description}</p>
+    <div class="article-meta">
+      <span>{article.data.author}</span>
+      <span>{article.data.pubDate.toLocaleDateString()}</span>
+    </div>
+  </div>
+</article>

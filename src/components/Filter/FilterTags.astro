@@ -1,0 +1,22 @@
+---
+import './FilterTags.css';
+
+const categories = [
+  { id: 'all', label: 'All' },
+  { id: 'quantum', label: 'Quantum' },
+  { id: 'ai-ml', label: 'AI/ML' },
+  { id: 'misc', label: 'Miscellaneous' }
+];
+---
+
+<div class="filter-tags">
+  {categories.map(category => (
+    <button 
+      class="filter-tag" 
+      data-category={category.id}
+      data-active={category.id === 'all' ? 'true' : 'false'}
+    >
+      {category.label}
+    </button>
+  ))}
+</div>

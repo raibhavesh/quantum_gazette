@@ -1,0 +1,52 @@
+/* Light Theme (default) */
+:root[data-theme="light"] {
+  --color-primary: #09ff00;
+  --color-primary-dark: #09ff00;
+  --color-primary-button: black;
+  --color-filter-button: white;
+  --color-primary-button-hover: #718096;
+  --color-link-hover: #09ff00;
+  --color-secondary: #4a5568;
+  --color-text: #1a202c;
+  --color-text-light: #718096;
+  --color-background: #ffffff;
+  --color-border: #e2e8f0;
+  --color-glow: rgba(107, 70, 193, 0.6);
+  --color-card-bg: #ffffff;
+  --color-header-gradient-1: var(--color-primary-dark);
+  --color-header-gradient-2: var(--color-primary);
+  --color-footer: black;
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  --color-primary: #09ff00;
+  --color-primary-dark: #09ff00;
+  --color-primary-button: black;
+  --color-filter-button: black;
+  --color-primary-button-hover: white;
+  --color-link-hover: #09ff00;
+  --color-secondary: #718096;
+  --color-text: #f7fafc;
+  --color-text-light: #cbd5e0;
+  --color-background: #1f1f1f;
+  --color-border: #2d3748;
+  --color-glow: rgba(159, 122, 234, 0.6);
+  --color-card-bg: #2d3748;
+  --color-header-gradient-1: #2d3748;
+  --color-header-gradient-2: #4a5568;
+  --color-footer: black;
+}
+
+/* Theme Transition */
+body {
+  transition: background-color var(--transition-speed),
+              color var(--transition-speed);
+}
+
+/* Theme-aware card styles */
+.article-card,
+.team-member {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-border);
+}
